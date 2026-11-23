@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#153d31">
+<meta name="description" content="Bookly.AI — an AI-assisted accounting and bookkeeping workspace by Khuram Shamraiz. Explore the project, features, and accountant-in-the-loop approach.">
+<meta property="og:title" content="Bookly.AI | Accounting Workspace by Khuram Shamraiz">
+<meta property="og:description" content="From bank transactions to reviewable bookkeeping and financial reporting. A project showcase.">
+<meta property="og:type" content="website">
+<title>Bookly.AI — Accounting Workspace | Khuram Shamraiz</title>
+<style>
+:root{--ink:#173d31;--ink2:#2a5948;--cream:#faf9f3;--paper:#fff;--muted:#667e70;--line:#dfebde;--gold:#f1d467;--mint:#e8f1e7;--rust:#b35445;--shadow:0 20px 60px #0c322018}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+h1,h2,h3,p{margin-top:0}h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+.wrap{max-width:1180px;margin:auto;padding:0 30px}
+header{background:var(--cream);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.wordmark{font-weight:900;letter-spacing:-1.2px;font-size:26px}.wordmark span{color:#ab513f}.wordmark small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:2px;font-weight:800;color:#738b7a;margin-top:-6px}
+.navright{display:flex;align-items:center;gap:22px;font-size:12px;font-weight:800;color:#395c49}.navright a:hover{color:#b35445}
+.pill{display:inline-flex;align-items:center;gap:7px;background:#edf4e9;border:1px solid #d9e9d7;color:#37674a;border-radius:50px;padding:7px 12px;font-size:10px;letter-spacing:.7px;text-transform:uppercase;font-weight:850}
+.dot{height:7px;width:7px;background:#4e9464;border-radius:50%}
+.hero{padding:65px 0 78px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:450px;height:450px;border-radius:50%;background:#dbe8d65b;right:-140px;top:-200px;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:53px;align-items:center;position:relative}
+.eyebrow{display:flex;align-items:center;gap:9px;color:#587761;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:900}
+.eyebrow:before{content:"";width:25px;height:3px;background:var(--gold)}
+h1{font-size:clamp(44px,5vw,78px);line-height:1.075;letter-spacing:-3.1px;margin:20px 0}
+h1 em{font-style:normal;color:#8aab8f}
+.lead{font-size:17px;color:#5e7768;line-height:1.85;max-width:545px;margin:0 0 21px}
+.note{color:#677f6f;font-size:12px;max-width:535px;line-height:1.75}
+.actions{display:flex;flex-wrap:wrap;gap:11px;margin:26px 0 19px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:10px;border:1px solid #bfcfc0;font-size:12px;font-weight:850;background:#fff}
+.btn.primary{background:var(--ink);color:white;border-color:var(--ink)}.btn.secondary{background:transparent}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px #123f3215}
+.proof{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}.proof span{font-size:10px;font-weight:800;letter-spacing:.3px;border-radius:50px;background:#eff4ec;border:1px solid #dae7d8;padding:7px 11px;color:#4b6e55}
+.window{box-shadow:0 28px 75px #1439282c;border:1px solid #304e41;border-radius:19px;overflow:hidden;background:#102d25;transform:rotate(-1deg)}
+.browserbar{padding:12px 15px;display:flex;gap:6px;align-items:center;background:#1d4335;border-bottom:1px solid #3c6050}
+.browserbar i{display:block;height:8px;width:8px;border-radius:50%;background:#f7d677}.browserbar i:nth-child(2){background:#97c5a2}.browserbar i:nth-child(3){background:#cc897b}
+.browserbar small{margin-left:auto;color:#b3d3bf;font-size:10px;letter-spacing:.7px}
+.dash{padding:23px;color:#f1f8f3}.dashhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.dashhead strong{font-size:22px}.dashhead small{display:block;color:#a0c3ae;font-size:11px}.testflag{border:1px solid #648771;color:#e9d78e;font-size:10px;border-radius:7px;padding:6px 9px}
+.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:19px 0}
+.stat{background:#244638;border:1px solid #355b47;border-radius:10px;padding:13px}.stat small{display:block;color:#aac8b5;font-size:10px}.stat strong{font-size:19px;letter-spacing:-.5px}.stat strong.green{color:#9bdab2}
+.dashpanel{background:#1c3b30;border:1px solid #345846;border-radius:11px;padding:15px;margin-top:10px}.dashpanel h4{margin:0 0 11px;font-size:12px;color:#dfecdf;letter-spacing:.5px}
+.tablehead,.tx{display:grid;grid-template-columns:1.1fr 1.5fr .9fr;gap:6px;font-size:10px;padding:9px 0;align-items:center}
+.tablehead{color:#91b29f;text-transform:uppercase;letter-spacing:.6px}.tx{color:#d9e9dc;border-top:1px solid #ffffff16}.tx b{font-weight:650}.tx em{font-style:normal;color:#e3ce79;font-weight:750}
+.rowtag{display:inline-block;background:#3a604b;padding:4px 6px;border-radius:5px;font-size:9px;white-space:nowrap}
+.visualnote{text-align:center;margin:13px 0 0;font-size:10px;color:#71877a}
+.band{background:var(--ink);color:white;padding:29px 0}.bandgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+.banditem{border-right:1px solid #ffffff28;padding:0 18px}.banditem:last-child{border:0}.banditem strong{display:block;color:var(--gold);font:25px Georgia;margin-bottom:3px}.banditem span{color:#d0e5d7;font-size:12px}
+section.content{padding:85px 0 0}.sectiontop{max-width:710px;margin-bottom:29px}
+section h2{font-size:clamp(34px,3.5vw,52px);line-height:1.12;letter-spacing:-1.5px;margin:15px 0}
+.sectiontop p{color:#6a806f}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.feature{background:white;padding:26px 25px;border:1px solid var(--line);border-radius:16px;min-height:210px;box-shadow:0 8px 25px #143e2910}
+.feature .icon{font-size:25px;background:var(--mint);width:47px;height:47px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px}
+.feature h3{font-size:17px;margin:0 0 7px}.feature p{font-size:12px;color:#6a8170;line-height:1.8;margin:0}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:30px}
+.step{background:#edf3e9;border:1px solid #d9e6d6;border-radius:13px;padding:19px 14px;min-height:130px}
+.step b{color:#a1802c;font-size:10px;letter-spacing:1px}.step strong{display:block;font-size:13px;margin:8px 0 4px}.step p{font-size:11px;color:#688170;line-height:1.6;margin:0}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:26px}
+.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:31px}
+.panel h3{font:27px Georgia;margin:0 0 13px}.panel p{font-size:13px;color:#6b7f70}
+.check{display:flex;align-items:flex-start;gap:10px;padding:11px 0;border-bottom:1px solid #e9eee8;font-size:13px}.check i{font-style:normal;color:#327553;font-weight:900}
+.stage{background:#fff4ce;border:1px solid #eddcaa;border-radius:12px;padding:16px;margin-top:18px;color:#775e23;font-size:12px;line-height:1.8}
+.cta{padding:65px 0 75px}.ctaarea{background:linear-gradient(120deg,#1b4435,#2c6850);border-radius:22px;color:white;padding:39px 46px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.ctaarea h2{color:white;margin:0;font-size:38px}.ctaarea p{color:#c8e1d1;margin:9px 0 0;font-size:13px;max-width:500px}.ctaarea .btn{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+footer{border-top:1px solid var(--line);color:#779083;padding:25px 0;font-size:11px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:30px}.window{transform:none;max-width:650px}.bandgrid{grid-template-columns:1fr}.banditem{border-right:0;border-bottom:1px solid #ffffff25;padding:13px 0}.features{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.wrap{padding:0 19px}.nav{height:68px}.navright a:first-child{display:none}.hero{padding:40px 0}.hero h1{letter-spacing:-1.5px}.lead{font-size:15px}.features,.split{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.ctaarea{flex-direction:column;align-items:flex-start;padding:30px}.ctaarea h2{font-size:30px}.statgrid{gap:5px}.stat{padding:10px}.stat strong{font-size:15px}.tx,.tablehead{font-size:9px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+ <a class="wordmark" href="#top" aria-label="Bookly AI home">bookly<span>.AI</span><small>Accounting, made reviewable</small></a>
+ <div class="navright"><a href="#features">Features</a><a href="#workflow">Workflow</a><a href="#approach">Approach</a><a href="./">← Full portfolio</a></div>
+</div></header>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid">
+ <div>
+  <span class="pill"><span class="dot"></span> Independent product project · Local prototype</span>
+  <div class="eyebrow" style="margin-top:32px">Finance meets practical automation</div>
+  <h1>From bank activity to <em>better books.</em></h1>
+  <p class="lead"><strong>Bookly.AI</strong> is an evolving accounting workspace built around one idea: reduce repetitive data preparation while keeping the accountant in control of every important decision.</p>
+  <div class="actions"><a href="#features" class="btn primary">Explore Bookly.AI ↘</a><a href="./#projects" class="btn secondary">See more projects ↗</a></div>
+  <p class="note">Built and explored by <strong>Khuram Shamraiz</strong> — CMA student and finance & accounting trainee. Public page describes the project; it does not run the desktop application.</p>
+  <div class="proof"><span>Bank statement intake</span><span>Journal suggestions</span><span>Accountant review</span><span>Financial reporting</span></div>
+ </div>
+ <div>
+  <div class="window" role="img" aria-label="Illustrative bookkeeping dashboard mockup using fictional transactions">
+   <div class="browserbar"><i></i><i></i><i></i><small>BOOKLY.AI / WORKSPACE</small></div>
+   <div class="dash">
+    <div class="dashhead"><div><strong>Financial overview</strong><small>Illustrative workspace · Sample figures</small></div><span class="testflag">REVIEW MODE</span></div>
+    <div class="statgrid"><div class="stat"><small>Transactions</small><strong>128</strong></div><div class="stat"><small>To review</small><strong>12</strong></div><div class="stat"><small>Reviewed</small><strong class="green">116</strong></div></div>
+    <div class="dashpanel"><h4>Suggested entries</h4><div class="tablehead"><span>Bank event</span><span>Suggested category</span><span>Status</span></div>
+      <div class="tx"><b>Vendor payment</b><span>Accounts payable</span><span><em class="rowtag">Review</em></span></div>
+      <div class="tx"><b>Customer receipt</b><span>Accounts receivable</span><span><em class="rowtag">Review</em></span></div>
+      <div class="tx"><b>Bank service fee</b><span>Bank charges</span><span><em class="rowtag">Review</em></span></div>
+    </div>
+    <div class="dashpanel"><h4>Output pathway</h4><div style="font-size:11px;color:#b6d3bd">Transactions → Draft journals → General ledger → Provisional financial statements</div></div>
+   </div>
+  </div>
+  <div class="visualnote">Conceptual UI illustration · Synthetic example data · Not an actual application screenshot</div>
+ </div>
+</div></section>
+<div class="band"><div class="wrap bandgrid">
+ <div class="banditem"><strong>Less rekeying</strong><span>Structure bank records for easier bookkeeping preparation</span></div>
+ <div class="banditem"><strong>More visibility</strong><span>Keep classifications and exceptions available for review</span></div>
+ <div class="banditem"><strong>Better judgment</strong><span>Leave approval and final reporting decisions to the accountant</span></div>
+</div></div>
+<section class="content" id="features"><div class="wrap">
+ <div class="sectiontop"><div class="eyebrow">What the project explores</div><h2>One workspace for the accounting journey.</h2><p>Bookly.AI brings together core bookkeeping processes in a connected, review-oriented design. Some parts are still being refined as part of a local application project.</p></div>
+ <div class="features">
+  <article class="feature"><div class="icon">▤</div><h3>Bank statement processing</h3><p>Organize imported bank activity and prepare consistent transaction records from source files.</p></article>
+  <article class="feature"><div class="icon">⇄</div><h3>Suggested classification</h3><p>Explore assisted account categorization with visible exceptions rather than automatic final posting.</p></article>
+  <article class="feature"><div class="icon">✎</div><h3>Draft journal entries</h3><p>Move transactions toward debit-and-credit entries that can be checked against supporting records.</p></article>
+  <article class="feature"><div class="icon">✓</div><h3>Human review controls</h3><p>Review, adjust and verify financial records before treating them as final accounting outputs.</p></article>
+  <article class="feature"><div class="icon">◫</div><h3>Financial reporting views</h3><p>Connect reviewed records to ledger, profit-and-loss and balance-sheet reporting concepts.</p></article>
+  <article class="feature"><div class="icon">◇</div><h3>Connected bookkeeping workspace</h3><p>Bring together customer, vendor, invoice and reconciliation work in a more structured environment.</p></article>
+ </div>
+</div></section>
+<section class="content" id="workflow"><div class="wrap">
+ <div class="sectiontop"><div class="eyebrow">Designed workflow</div><h2>From source documents to reliable decisions.</h2><p>A practical accounting process should be explainable at every step — especially when AI is involved.</p></div>
+ <div class="flow">
+  <div class="step"><b>01</b><strong>Import</strong><p>Start with bank transactions or accounting documents.</p></div>
+  <div class="step"><b>02</b><strong>Structure</strong><p>Read fields, standardize records and flag gaps.</p></div>
+  <div class="step"><b>03</b><strong>Suggest</strong><p>Prepare candidate categories and journal entries.</p></div>
+  <div class="step"><b>04</b><strong>Review</strong><p>Have an accountant verify purpose, evidence and accuracy.</p></div>
+  <div class="step"><b>05</b><strong>Report</strong><p>Prepare provisional ledger and reporting views.</p></div>
+ </div>
+</div></section>
+<section class="content" id="approach"><div class="wrap">
+ <div class="sectiontop"><div class="eyebrow">Responsible accounting automation</div><h2>Automation supports the accountant. It doesn't replace the controls.</h2></div>
+ <div class="split">
+  <div class="panel"><h3>Design principles</h3>
+   <div class="check"><i>✓</i><span>Keep source data and suggested postings traceable.</span></div>
+   <div class="check"><i>✓</i><span>Require review for uncertain transaction classifications.</span></div>
+   <div class="check"><i>✓</i><span>Do not treat bank activity alone as complete accrual books.</span></div>
+   <div class="check"><i>✓</i><span>Protect confidential financial records and use synthetic data in public examples.</span></div>
+  </div>
+  <div class="panel"><h3>Project status</h3><p>Bookly.AI is a personal accounting software project, developed and iterated as a local application. The emphasis is on bank-to-books workflows, assisted bookkeeping and controlled reporting.</p>
+   <div class="stage"><strong>Development disclosure:</strong> This website is a public case study, not a login page or production accounting service. Features described are product goals or explored workflows; complete unattended AI bookkeeping has not been independently verified.</div>
+   <p style="margin-top:17px"><strong>Creator:</strong> Khuram Shamraiz<br><strong>Focus:</strong> Accounting, bookkeeping and practical AI automation</p>
+  </div>
+ </div>
+</div></section>
+<section class="cta"><div class="wrap"><div class="ctaarea"><div><h2>Accounting beyond numbers.</h2><p>See the other reconciliation, financial reporting, analytics and workflow projects in my portfolio.</p></div><a href="./#projects" class="btn">Explore all projects ↗</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 Khuram Shamraiz · Bookly.AI project showcase</span><span>Accounting × Automation × Human review</span></div></footer>
+</body>
+</html>
